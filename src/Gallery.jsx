@@ -23,7 +23,7 @@ export function Gallery() {
 
   useEffect(() => {
     const fetchImages = () => {
-      fetch("http://localhost:5000/api/images")
+      fetch("https://image-gallery-tfhg.onrender.com/api/images")
         .then(response => response.json())
         .then(data => {
           setImages(data);

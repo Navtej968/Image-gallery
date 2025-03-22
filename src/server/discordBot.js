@@ -1,5 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import fs from "fs";
+import { config } from "dotenv";
+config();
 
 function myscript(){
 
@@ -46,7 +48,7 @@ async function fetchImageURLs(channelId) {
 // Function to save image URLs to a text file
 function saveImagesToFile(imageURLs) {
   const fileData = imageURLs.join("\n"); // Join URLs with line breaks
-  fs.writeFile("src/scrip/images.txt", fileData, (err) => {
+  fs.writeFile("src/server/images.txt", fileData, (err) => {
     if (err) {
       console.error("❌ Error saving file:", err);
     } else {
@@ -66,10 +68,7 @@ client.once("ready", async () => {
   console.log("saved");
 });
 
-
-
-
-client.login("MTM1MTg3NTAwODM2NDAyMzg1OQ.Ghe7I-.YMlSGsvBAYRzAos2UjvkoR8n49tVQa4QM1ZvsU")
+client.login(process.env.discord_token)
 
 }
 

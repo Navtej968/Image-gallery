@@ -48,7 +48,7 @@ async function fetchImageURLs(channelId) {
 // Function to save image URLs to a text file
 function saveImagesToFile(imageURLs) {
   const fileData = imageURLs.join("\n"); // Join URLs with line breaks
-  fs.writeFile("src/server/images.txt", fileData, (err) => {
+  fs.writeFile("/images.txt", fileData, (err) => {
     if (err) {
       console.error("❌ Error saving file:", err);
     } else {

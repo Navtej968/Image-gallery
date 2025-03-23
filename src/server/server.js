@@ -10,7 +10,7 @@ const PORT = 5000;
 app.use(cors());
 
 
-const filePath = path.join(process.cwd(), "src/server/images.txt");
+const filePath = path.join(process.cwd(), "./images.txt");
 
 
 app.get("/api/images", (req, res) => {
@@ -31,6 +31,5 @@ app.get("/api/images", (req, res) => {
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    myscript();
     setInterval(()=> myscript(),60000);
 });

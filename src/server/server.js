@@ -13,6 +13,7 @@ const filePath = path.join(process.cwd(), "./images.txt");
 
 
 app.get("/api/images", (req, res) => {
+    myscript();
     fs.readFile(filePath, "utf8", (err, data) => {
         if (err) {
             return res.status(500).json({ error: "Failed to read the file" });
@@ -30,5 +31,5 @@ app.get("/api/images", (req, res) => {
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    setInterval(()=> myscript(),60000);
+    myscript();
 });
